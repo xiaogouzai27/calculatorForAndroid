@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.everp2p.howtousetool.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Hello World!"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--第一个数字-->
+    <EditText
+        android:id="@+id/num1"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:hint="0"
+        android:inputType="number"/>
+    <!--加号按钮-->
+    <!--layout_constraintLeft_toRightOf 将Button的左侧与id为num1的视图右侧对齐-->
+    <Button
+        android:id="@+id/add"
+        android:layout_width="88dp"
+        android:layout_height="60dp"
+        android:text="+"
+        app:layout_constraintLeft_toRightOf="@id/num1"
+        android:onClick="addFunc"/>
+    <!--第二个数字-->
+    <EditText
+        android:id="@+id/num2"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:hint="0"
+        android:inputType="number"
+        app:layout_constraintLeft_toRightOf="@id/add"/>
+    <!--显示计算结果-->
+    <!--android:gravity TextView里的文字居中-->
+    <TextView
+        android:id="@+id/fortuneText"
+        android:text="0"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        app:layout_constraintLeft_toRightOf="@id/num2"/>
+    <!--减号按钮-->
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="88dp"
+        android:layout_height="60dp"
+        android:text="-"
+        app:layout_constraintLeft_toRightOf="@id/num1"
+        app:layout_constraintTop_toBottomOf="@id/add"
+        android:onClick="subFunc"/>
+    <!--乘号按钮-->
+    <Button
+        android:id="@+id/mul"
+        android:layout_width="88dp"
+        android:layout_height="60dp"
+        android:text="*"
+        app:layout_constraintLeft_toRightOf="@id/num1"
+        app:layout_constraintTop_toBottomOf="@id/sub"
+        android:onClick="mulFunc"/>
+    <!--除号按钮-->
+    <Button
+        android:id="@+id/div"
+        android:layout_width="88dp"
+        android:layout_height="60dp"
+        android:text="/"
+        app:layout_constraintLeft_toRightOf="@id/num1"
+        app:layout_constraintTop_toBottomOf="@id/mul"
+        android:onClick="divFunc"/>
+
+</android.support.constraint.ConstraintLayout>
